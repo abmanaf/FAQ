@@ -1,5 +1,3 @@
-"use strict";
-
 window.addEventListener("load", function () {
   // Variables
   const faqCard = document.querySelector(".faq-card");
@@ -7,11 +5,10 @@ window.addEventListener("load", function () {
   const faqItems = [...document.querySelectorAll(".faq-item")];
   const faqItemHeaders = [...document.querySelectorAll(".faq-item-header")];
 
-  // Functions
-  const displayActiveIcon = function (activeIcon, inactiveIcon) {
+  function displayActiveIcon(activeIcon, inactiveIcon) {
     activeIcon.style.display = "block";
     inactiveIcon.style.display = "none";
-  };
+  }
 
   const closeFaqItems = function () {
     faqItems.forEach((faqItem) => {
@@ -47,7 +44,7 @@ window.addEventListener("load", function () {
       }
     }
   });
-
+  /*
   faqList.addEventListener("keydown", function (event) {
     if (event.target.closest(".faq-item-header") && event.keyCode === 13) {
       const faqItem = event.target.closest(".faq-item");
@@ -64,6 +61,7 @@ window.addEventListener("load", function () {
       }
     }
   });
+  */
 
   // Resize Observer
   let initialFaqCardWidth = faqCard.offsetWidth;
