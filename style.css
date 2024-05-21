@@ -1,0 +1,160 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --bright-purple: hsl(281, 83%, 54%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.625rem;
+  font-family: "Work Sans", sans-serif;
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2 {
+  color: var(--dark-purple);
+}
+
+h1 {
+  font-size: 3.4rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2.1rem;
+  transition: color 250ms;
+}
+
+p {
+  color: var(--grayish-purple);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.main-container {
+  position: relative;
+  padding: 2.4rem;
+  background-color: var(--light-pink);
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-image-desktop,
+.bg-image-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bg-image-desktop {
+  display: none;
+}
+
+.faq-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--white);
+  padding: 2.4rem 2.4rem 0;
+  border-radius: 10px;
+  max-width: 327px;
+  margin: auto;
+  animation: introFaqCard 0.9s ease-in-out;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  margin-right: 2rem;
+  width: 2.4rem;
+}
+
+.faq-item {
+  border-bottom: 2px solid var(--light-pink);
+  overflow: hidden;
+  transition: max-height 350ms;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.4rem 0;
+  cursor: pointer;
+}
+
+.faq-item-header:hover h2 {
+  color: var(--bright-purple);
+}
+
+.minus-icon {
+  display: none;
+}
+
+@media screen and (min-width: 567px) {
+  .bg-image-mobile {
+    display: none;
+  }
+
+  .bg-image-desktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .faq-card {
+    max-width: 550px;
+    padding: 3rem 3rem 0;
+  }
+
+  .faq-item-header {
+    padding: 3rem 0;
+  }
+}
+
+@keyframes introFaqCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
