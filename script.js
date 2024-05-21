@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-  // Variables
   const faqCard = document.querySelector(".faq-card");
   const faqList = document.querySelector(".faq-list");
   const faqItems = [...document.querySelectorAll(".faq-item")];
@@ -25,7 +24,6 @@ window.addEventListener("load", function () {
 
   closeFaqItems();
 
-  // Faq Item Click Event
   faqList.addEventListener("click", function (event) {
     if (event.target.closest(".faq-item-header")) {
       const targetFaqItem = event.target
@@ -63,7 +61,6 @@ window.addEventListener("load", function () {
   });
   */
 
-  // Resize Observer
   let initialFaqCardWidth = faqCard.offsetWidth;
 
   const resizeObserver = new ResizeObserver((entries) => {
